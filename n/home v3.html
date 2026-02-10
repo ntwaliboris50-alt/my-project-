@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>BORIS DRONES SHOP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* RESET & BASIC */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      transition: all 0.3s;
+    }
+
+    body {
+      background: #fff;
+      color: #000;
+    }
+
+    a {
+      cursor: pointer;
+    }
+
+    /* HEADER */
+    header {
+      background: #000;
+      color: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      color: #ffcc00;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ff0000;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)),
+        url("1.jpg") center/cover;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .hero h2 {
+      font-size: 60px;
+      color: #ff0000;
+      text-shadow: 0 0 10px #000;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .hero span {
+      color: #ffcc00;
+    }
+
+    /* BUTTON */
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: #ff0000;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #ffcc00;
+      color: black;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 60px 30px;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #ff0000;
+    }
+
+    /* FEATURES */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      border: 2px solid #000;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      background: #fff;
+      transition: all 0.3s;
+    }
+
+    .card h3 {
+      color: #ff0000;
+      margin-bottom: 10px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      border: 3px solid #ffcc00;
+      transition: all 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      border-color: #ff0000;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* SIDEBAR */
+    #menu-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #ff0000;
+      color: #fff;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      z-index: 1000;
+    }
+
+    #sidebar {
+      position: fixed;
+      top: 0;
+      left: -270px;
+      width: 270px;
+      height: 100%;
+      background: #111;
+      color: #fff;
+      padding: 20px;
+      transition: 0.3s;
+      z-index: 999;
+    }
+
+    #sidebar h2 {
+      margin-bottom: 20px;
+    }
+
+    #sidebar a {
+      display: block;
+      margin: 15px 0;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    #sidebar a:hover {
+      color: #ffcc00;
+    }
+
+    #sidebar hr {
+      border-color: #555;
+      margin: 20px 0;
+    }
+
+    #sidebar button {
+      margin: 5px;
+      padding: 8px 12px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    /* BACK TO TOP BUTTON */
+    #back-top {
+      position: fixed;
+      bottom: 40px;
+      right: 30px;
+      background: #ff0000;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body id="body">
+
+  <!-- MENU BUTTON -->
+  <div id="menu-btn">☰ Menu</div>
+
+  <!-- SIDEBAR -->
+  <div id="sidebar">
+    <h2>Menu</h2>
+    <a href="#home" class="side-link">Home</a>
+    <a href="#products" class="side-link">Products</a>
+    <a href="#gallery" class="side-link">Gallery</a>
+    <a href="#contact" class="side-link">Contact</a>
+
+    <hr>
+
+    <h3>Theme Settings</h3>
+    <button class="theme-btn" data-color="#ff0000" style="background:#ff0000;color:#fff;">Red</button>
+    <button class="theme-btn" data-color="#0000ff" style="background:#0000ff;color:#fff;">Blue</button>
+    <button class="theme-btn" data-color="#000000" style="background:#000000;color:#fff;">Black</button>
+    <button class="theme-btn" data-color="#00ff00" style="background:#00ff00;color:#000;">Green</button>
+
+    <hr>
+
+    <h3>Language</h3>
+    <button id="lang-en" style="margin:3px;">English</button>
+    <button id="lang-rw" style="margin:3px;">Ikirundi</button>
+  </div>
+
+  <!-- HEADER -->
+  <header id="home">
+    <h1>BORIS DRONES SHOP</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <h2 id="hero-title">BORIS <span>DRONES</span> SHOP</h2>
+      <p id="hero-desc">Ahantu heza ho kugura drones z’igihe kigezweho</p>
+      <a href="home2.html" class="btn" id="hero-btn">Reba Drones zirikwisoko</a>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section id="products">
+    <h2 class="title" id="feature-title">Impamvu wahitamo twe</h2>
+    <div class="features">
+      <div class="card">
+        <h3 id="card1-title">Quality Nziza</h3>
+        <p id="card1-desc">Drones zacu zifite camera ya 4K.</p>
+      </div>
+      <div class="card">
+        <h3 id="card2-title">Battery Iramara</h3>
+        <p id="card2-desc">Min 40 yo kuguruka udahagarara.</p>
+      </div>
+      <div class="card">
+        <h3 id="card3-title">GPS Smart</h3>
+        <p id="card3-desc">Auto return & navigation nziza.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <h2 class="title" id="gallery-title">Amafoto ya Drones</h2>
+    <div class="gallery">
+      <img src="ft1.jpeg" width="200" height="200">
+      <img src="ft6.jpeg" width="200" height="200">
+      <img src="ft4.jpeg" width="200" height="200">
+      <img src="ft5.jpeg" width="200" height="200">
+      <img src="ft2.jpeg" width="200" height="200">
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <p>© 2026 BORIS DRONES SHOP — All Rights Reserved</p>
+  </footer>
+
+  <!-- BACK TO TOP BUTTON -->
+  <div id="back-top">↑ Top</div>
+
+  <!-- JS -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const sidebar = document.getElementById('sidebar');
+    const body = document.getElementById('body');
+
+    // Toggle sidebar
+    menuBtn.addEventListener('click', () => {
+      sidebar.style.left = (sidebar.style.left === '0px') ? '-270px' : '0px';
+    });
+
+    // Theme buttons with persistence
+    const themeBtns = document.querySelectorAll('.theme-btn');
+    function applyTheme(color) {
+      body.style.backgroundColor = color;
+      document.querySelector('header').style.backgroundColor = color;
+      document.querySelector('.hero').style.backgroundColor = color;
+      document.querySelectorAll('.btn').forEach(b => b.style.backgroundColor = color);
+      document.querySelectorAll('.card').forEach(c => c.style.borderColor = color);
+      document.querySelectorAll('.gallery img').forEach(img => img.style.borderColor = color);
+      document.querySelector('footer').style.backgroundColor = color;
+    }
+
+    themeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const color = btn.getAttribute('data-color');
+        applyTheme(color);
+        localStorage.setItem('themeColor', color);
+      });
+    });
+
+    // Load theme from localStorage
+    const savedColor = localStorage.getItem('themeColor');
+    if (savedColor) applyTheme(savedColor);
+
+    // Smooth scroll for sidebar links
+    const sideLinks = document.querySelectorAll('.side-link');
+    sideLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+        sidebar.style.left = '-270px';
+      });
+    });
+
+    // Back to top button
+    const backTop = document.getElementById('back-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) backTop.style.display = 'block';
+      else backTop.style.display = 'none';
+    });
+    backTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Language toggle
+    const langEnBtn = document.getElementById('lang-en');
+    const langRwBtn = document.getElementById('lang-rw');
+
+    const texts = {
+      en: {
+        heroTitle: 'BORIS DRONES SHOP',
+        heroDesc: 'The best place to buy modern drones',
+        heroBtn: 'See Drones in Stock',
+        featureTitle: 'Why Choose Us',
+        card1Title: 'High Quality',
+        card1Desc: 'Our drones have 4K cameras.',
+        card2Title: 'Long Battery',
+        card2Desc: 'Fly at least 40 minutes nonstop.',
+        card3Title: 'Smart GPS',
+        card3Desc: 'Auto return & smooth navigation.',
+        galleryTitle: 'Drone Photos'
+      },
+      rw: {
+        heroTitle: 'BORIS DRONES SHOP',
+        heroDesc: 'Ahantu heza ho kugura drones z’igihe kigezweho',
+        heroBtn: 'Reba Drones zirikwisoko',
+        featureTitle: 'Impamvu wahitamo twe',
+        card1Title: 'Quality Nziza',
+        card1Desc: 'Drones zacu zifite camera ya 4K.',
+        card2Title: 'Battery Iramara',
+        card2Desc: 'Min 40 yo kuguruka udahagarara.',
+        card3Title: 'GPS Smart',
+        card3Desc: 'Auto return & navigation nziza.',
+        galleryTitle: 'Amafoto ya Drones'
+      }
+    };
+
+    function applyLanguage(lang) {
+      document.getElementById('hero-title').innerText = texts[lang].heroTitle;
+      document.getElementById('hero-desc').innerText = texts[lang].heroDesc;
+      document.getElementById('hero-btn').innerText = texts[lang].heroBtn;
+      document.getElementById('feature-title').innerText = texts[lang].featureTitle;
+      document.getElementById('card1-title').innerText = texts[lang].card1Title;
+      document.getElementById('card1-desc').innerText = texts[lang].card1Desc;
+      document.getElementById('card2-title').innerText = texts[lang].card2Title;
+      document.getElementById('card2-desc').innerText = texts[lang].card2Desc;
+      document.getElementById('card3-title').innerText = texts[lang].card3Title;
+      document.getElementById('card3-desc').innerText = texts[lang].card3Desc;
+      document.getElementById('gallery-title').innerText = texts[lang].galleryTitle;
+      localStorage.setItem('lang', lang);
+    }
+
+    langEnBtn.addEventListener('click', () => applyLanguage('en'));
+    langRwBtn.addEventListener('click', () => applyLanguage('rw'));
+
+    // Load language
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang) applyLanguage(savedLang);
+  </script>
+</body>
+
+</html>

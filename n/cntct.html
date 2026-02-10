@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - BORIS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff0000, #0000ff, #ffff00, #00ff00);
+            /* umutuku, ubururu, umuhondo, icyatsi */
+            margin: 0;
+            padding: 0;
+            color: #000;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff0000;
+            /* umutuku */
+            margin-bottom: 20px;
+        }
+
+        .info p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .info p span {
+            font-weight: bold;
+            color: #0000ff;
+            /* ubururu */
+        }
+
+        .contact-form {
+            margin-top: 30px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 2px solid #00ff00;
+            /* icyatsi */
+            font-size: 16px;
+        }
+
+        .contact-form button {
+            background-color: #ffff00;
+            /* umuhondo */
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .contact-form button:hover {
+            background-color: #ff0000;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Contact BORIS</h1>
+
+        <div class="info">
+            <p><span>Name:</span> BORIS</p>
+            <p><span>City:</span> KIGALI</p>
+            <p><span>Country:</span> RWANDA</p>
+            <p><span>Email:</span> BORIS@GMAIL.COM</p>
+            <p><span>Phone:</span> 0795891676 / 0788551079</p>
+        </div>
+
+        <div class="contact-form">
+            <h2>Send a Message</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Subject" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
