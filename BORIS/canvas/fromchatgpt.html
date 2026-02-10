@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head><title>CANVAS</title></head>
+<body>
+    <canvas id="level" width="200" height="200" 
+            style="border:6px solid rgb(224, 26, 128)">
+    </canvas>
+
+<script>
+    
+    var c = document.getElementById("level");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.moveTo(20, 20);
+    ctx.bezierCurveTo(20, 100, 100, 100, 100, 20);
+    ctx.stroke();
+
+   
+    ctx.beginPath();
+    ctx.moveTo(150, 30);  
+    ctx.lineTo(190, 60);
+    ctx.lineTo(165, 80);
+    ctx.lineTo(175, 110);
+    ctx.lineTo(150, 90);
+    ctx.lineTo(125, 110);
+    ctx.lineTo(135, 80);
+    ctx.lineTo(110, 60);
+    ctx.lineTo(140, 60);
+    ctx.closePath();
+
+    ctx.stroke();
+</script>
+
+</body>
+</html>

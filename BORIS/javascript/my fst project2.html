@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>STUDENT PORTOL</title>
+</head>
+
+<body>
+    <h1>WELCOME TO STUDENT PORTOL</h1>
+    <p id="demo"></p>
+    <script>
+        window.alert("WELCOME TO STUDENT PORTOL")
+        let STUDENTNAME = prompt("STUDENTNAME");
+        let marks = parseFloat(prompt("marks"));
+        let bonusmarks = parseFloat(prompt("bonusmarks"));
+        let totalmarks = marks + bonusmarks;
+        document.getElementById("demo").innerHTML = "STUDENTNAME:" + STUDENTNAME + "<br>" + "marks:"
+            + marks + "<br>" + "bonusmarks" + bonusmarks + "<br>"
+            + "totalmarks:" + totalmarks;
+    </script>
+</body>
+
+</html>

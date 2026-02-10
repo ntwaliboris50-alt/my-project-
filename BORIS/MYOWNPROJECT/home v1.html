@@ -1,0 +1,52 @@
+<!-- MENU BUTTON -->
+<div id="menu-btn">☰ Menu</div>
+
+<!-- SIDEBAR -->
+<div id="sidebar">
+  <h2>Menu</h2>
+  <a href="#home" class="side-link">Home</a>
+  <a href="#products" class="side-link">Products</a>
+  <a href="#gallery" class="side-link">Gallery</a>
+  <a href="#contact" class="side-link">Contact</a>
+
+  <hr>
+
+  <h3>Theme Settings</h3>
+  <button class="theme-btn" data-color="#ff0000" style="background:#ff0000;color:#fff">Red</button>
+  <button class="theme-btn" data-color="#0000ff" style="background:#0000ff;color:#fff">Blue</button>
+  <button class="theme-btn" data-color="#000000" style="background:#000000;color:#fff">Black</button>
+  <button class="theme-btn" data-color="#00ff00" style="background:#00ff00;color:#000">Green</button>
+</div>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const sidebar = document.getElementById('sidebar');
+
+  menuBtn.addEventListener('click', () => {
+    sidebar.style.left = (sidebar.style.left === '0px') ? '-250px' : '0px';
+  });
+
+  // Theme buttons
+  const themeBtns = document.querySelectorAll('.theme-btn');
+  themeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.body.style.backgroundColor = btn.getAttribute('data-color');
+    });
+  });
+
+  // Smooth scroll
+  const sideLinks = document.querySelectorAll('.side-link');
+  sideLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop,
+          behavior: 'smooth'
+        });
+      }
+      sidebar.style.left = '-250px';
+    });
+  });
+</script>
